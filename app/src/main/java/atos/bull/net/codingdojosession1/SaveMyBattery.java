@@ -1,4 +1,4 @@
-package atos.bull.net.codinddojosession1;
+package atos.bull.net.codingdojosession1;
 
 import android.app.Activity;
 import android.content.Intent;

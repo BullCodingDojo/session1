@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="atos.bull.net.codinddojosession1" >
+    package="atos.bull.net.codingdojosession1" >
 
     <application
         android:allowBackup="true"
@@ -9,9 +9,15 @@
         android:theme="@style/AppTheme" >
 
     <activity
-        android:name="atos.bull.net.codinddojosession1.SaveMyBattery"
+        android:name=".SaveMyBattery"
         android:label="@string/saveMyBattery"></activity>
 
+        <service android:name=".CheckBatteryLife"  android:enabled="true"></service>
+        <receiver android:name=".PowerConnectionReceiver">
+            <intent-filter>
+                <action android:name="codingDojo1.BATTERY_LOW" />
+            </intent-filter>
+        </receiver>
     </application>
     <uses-permission android:name="android.permission.CHANGE_NETWORK_STATE"/>
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
