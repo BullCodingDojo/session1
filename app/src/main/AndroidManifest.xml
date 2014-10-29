@@ -8,11 +8,14 @@
         android:label="@string/app_name"
         android:theme="@style/AppTheme" >
 
-    <activity
-        android:name=".SaveMyBattery"
-        android:label="@string/saveMyBattery"></activity>
+        <activity android:name=".SaveMyBattery" android:label="@string/saveMyBattery">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"></action>
+            </intent-filter>
+        </activity>
 
-        <service android:name=".CheckBatteryLife"  android:enabled="true"></service>
+        <service android:name=".CheckBatteryLife" android:enabled="true"/>
+
         <receiver android:name=".PowerConnectionReceiver">
             <intent-filter>
                 <action android:name="codingDojo1.BATTERY_LOW" />
