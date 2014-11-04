@@ -28,6 +28,7 @@ public class CheckBatteryLife extends IntentService{
 
         float batteryPct = level / (float)scale;
 
+            System.out.println("CheckBatteryLife...");
         if (batteryPct <= batteryThreshold) {
             Intent batteryLowIntent = new Intent("codingDojo1.BATTERY_LOW");
             sendBroadcast(batteryLowIntent);

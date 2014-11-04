@@ -38,10 +38,11 @@ public class SaveMyBattery extends Activity{
                 String str = editText.getText().toString();
                 Intent intent = new Intent(view.getContext(), CheckBatteryLife.class);
                 intent.putExtra("value", str);
+                PendingIntent pi =  PendingIntent.getService(view.getContext(), 0, intent, PendingIntent.FLAG_UPDATE_CURRENT);
 
-                alarmManager.setInexactRepeating(AlarmManager.ELAPSED_REALTIME_WAKEUP,
+                alarmManager.setInexactRepeating(AlarmManager.RTC_WAKEUP,
                         Calendar.getInstance().getTimeInMillis(), 10000,
-                        PendingIntent.getService(getApplicationContext(), 0, intent, PendingIntent.FLAG_CANCEL_CURRENT));
+                        pi);
             }
         });
     }
