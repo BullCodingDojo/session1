@@ -29,7 +29,7 @@ public class checkDataOffTest extends ActivityUnitTestCase<SaveMyBattery> {
                 .getTargetContext(), SaveMyBattery.class);
         startActivity(mLaunchIntent, null, null);
         saveButton = (Button) getActivity().findViewById(R.id.saveButton);
-        editText = (EditText) getActivity().findViewById(R.id.editText);
+        editText = (EditText) getActivity().findViewById(R.id.editTextThreshold);
     }
 
     public void testDataAndBatteryLife() {
