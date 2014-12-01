@@ -5,6 +5,8 @@
     <string name="hello_world">Hello world!</string>
     <string name="action_settings">Settings</string>
     <string name="saveMyBattery">Save My Battery</string>
+    <string name="nonNullValue">"Please enter a non null value"</string>
+    <string name="maxThresholdError">Max value for threshold reached</string>
 
 
 </resources>

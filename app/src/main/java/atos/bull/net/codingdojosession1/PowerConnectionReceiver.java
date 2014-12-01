@@ -18,11 +18,15 @@ public class PowerConnectionReceiver extends BroadcastReceiver {
     @Override
     public void onReceive(Context context, Intent intent) {
         String action = intent.getAction();
-        Toast.makeText(context, "coucou",Toast.LENGTH_SHORT);
+        Boolean checkWifi = intent.getBooleanExtra("checkWiFi", false);
+        Boolean check3G = intent.getBooleanExtra("check3G", false);
+
         if (action == "codingDojo1.BATTERY_LOW") {
             try {
-                changeMobileData(context, false);
-
+                if (check3G)
+                    changeMobileData(context, false);
+               // if (checkWifi)
+               //     changeWifi()
             } catch (ClassNotFoundException e) {
                 e.printStackTrace();
             } catch (NoSuchMethodException e) {

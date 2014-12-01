@@ -42,6 +42,38 @@
         android:id="@+id/editTextRepeating"
         android:text="2" />
 
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:text="Disable Wifi"
+        android:id="@+id/textViewDisableWifi" />
+
+    <CheckBox
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/checkBoxWiFi"
+        android:layout_gravity="right"
+        android:paddingRight="50dip"
+        android:paddingEnd="50dip"
+        android:checked="false" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:text="Disable 3G"
+        android:id="@+id/textViewDisable3G" />
+
+    <CheckBox
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/checkBox3G"
+        android:layout_gravity="right"
+        android:paddingRight="50dip"
+        android:paddingEnd="50dip"
+        android:checked="false" />
+
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
