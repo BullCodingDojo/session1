@@ -4,6 +4,7 @@ import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
 import android.net.ConnectivityManager;
+import android.net.wifi.WifiManager;
 import android.telephony.TelephonyManager;
 import android.widget.Toast;
 
@@ -25,8 +26,8 @@ public class PowerConnectionReceiver extends BroadcastReceiver {
             try {
                 if (check3G)
                     changeMobileData(context, false);
-               // if (checkWifi)
-               //     changeWifi()
+                if (checkWifi)
+                    changeWifi(context, false);
             } catch (ClassNotFoundException e) {
                 e.printStackTrace();
             } catch (NoSuchMethodException e) {
@@ -40,6 +41,30 @@ public class PowerConnectionReceiver extends BroadcastReceiver {
                 e.printStackTrace();
             }
         }
+        if (action == "codingDojo1.BATTERY_OK") {
+            try {
+                if (check3G)
+                    changeMobileData(context, true);
+                if (checkWifi)
+                    changeWifi(context, true);
+            } catch (ClassNotFoundException e) {
+                e.printStackTrace();
+            } catch (NoSuchMethodException e) {
+                e.printStackTrace();
+            } catch (InvocationTargetException e) {
+                e.getCause();
+                e.printStackTrace();
+            } catch (IllegalAccessException e) {
+                e.printStackTrace();
+            } catch (NoSuchFieldException e) {
+                e.printStackTrace();
+            }
+        }
+    }
+
+    private void changeWifi(Context context, boolean b) {
+        WifiManager wifiManager = (WifiManager) context.getSystemService(Context.WIFI_SERVICE);
+        wifiManager.setWifiEnabled(b);
     }
 
     private void changeMobileData(Context context, boolean active) throws ClassNotFoundException, NoSuchMethodException, InvocationTargetException, IllegalAccessException, NoSuchFieldException {

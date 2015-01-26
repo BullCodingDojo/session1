@@ -39,5 +39,11 @@ public class CheckBatteryLife extends IntentService{
             batteryLowIntent.putExtra("check3G", check3G);
             sendBroadcast(batteryLowIntent);
         }
+        else if(batteryPct > batteryThreshold && (checkWifi ||check3G)) {
+            Intent batteryLowIntent = new Intent("codingDojo1.BATTERY_OK");
+            batteryLowIntent.putExtra("checkWiFi", checkWifi);
+            batteryLowIntent.putExtra("check3G", check3G);
+            sendBroadcast(batteryLowIntent);
+        }
     }
 }

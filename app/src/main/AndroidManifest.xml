@@ -19,6 +19,7 @@
         <receiver android:name=".PowerConnectionReceiver">
             <intent-filter>
                 <action android:name="codingDojo1.BATTERY_LOW" />
+                <action android:name="codingDojo1.BATTERY_OK" />
             </intent-filter>
         </receiver>
     </application>
